@@ -43,7 +43,7 @@ $bird2->conservationLevel = "Low";
 $bird1->song("drink-your-tea");
 $bird1->canFly("This bird can fly");
 
-$bird2->birdSong("whatwhat");
+$bird2->birdSong("whatwhat!!");
 $bird2->canFly("This bird can fly");
 
 ?>
