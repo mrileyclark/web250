@@ -41,9 +41,9 @@ $bird2->conservationLevel = "Low";
 
 // Call the methods
 $bird1->song("drink-your-tea");
-$bird1->canFly("can fly");
+$bird1->canFly("This bird can fly");
 
 $bird2->birdSong("whatwhat");
-$bird2->canFly("can fly");
+$bird2->canFly("This bird can fly");
 
 ?>
