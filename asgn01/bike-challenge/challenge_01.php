@@ -1,0 +1,50 @@
+<?php
+
+class Bicycle
+{
+    public $brand;
+    public $model;
+    public $year;
+    public $description = "Used bicycle";
+    public $weight_kg = 0.0;
+
+    public function name()
+    {
+        return $this->brand . " " . $this->model . " (" . $this->year . ")";
+    }
+
+    public function weight_lbs()
+    {
+        return floatval($this->weight_kg) * 2.2046226218;
+    }
+
+    public function set_weight_lbs($value)
+    {
+        $this->weight_kg = floatval($value) / 2.2046226218;
+    }
+}
+
+$trek = new Bicycle();
+$trek->brand = "Trek";
+$trek->model = "Emonda";
+$trek->year = "2017";
+$trek->weight_kg = 1.0;
+
+$cd = new Bicycle();
+$cd->brand = "Cannondale";
+$cd->model = "Synapse";
+$cd->year = "2016";
+$cd->weight_kg = 8.0;
+
+echo $trek->name() . "<br>";
+echo $cd->name() . "<br>";
+
+echo $trek->weight_kg . " kg<br>";
+// method bc has ()
+echo $trek->weight_lbs() . " lbs<br>";
+
+$trek->set_weight_lbs(2);
+echo $trek->weight_kg . "<br>";
+echo $trek->weight_lbs() . "<br>";
+
+?>
