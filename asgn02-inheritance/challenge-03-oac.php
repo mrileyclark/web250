@@ -18,7 +18,7 @@ class Bicycle
 
   public function wheelDetails()
   {
-    $wheel_string = ($this->wheels == 1) ? "1 wheel" : $this->wheels . " wheels";
+    $wheel_string = ($this->wheels == 1) ? "1 wheel" : "{$this->wheels} wheels";
     return "It has " . $wheel_string . ".";
   }
 
@@ -52,7 +52,7 @@ class Unicycle extends Bicycle
   public function bugTest()
   {
     //ref is meaningless when inside here 
-    return $this->weight_kg();
+    return $this->weight_kg;
   }
 }
 
@@ -84,5 +84,5 @@ $uni->set_weight_kg(1);
 echo $uni->weight_kg() . "<br>";
 echo $uni->weight_lbs() . "<br>";
 
-// didnt get error he did in vid
+// undefined property error, because weight_kg is private in Bicycle
 echo $uni->bugTest() . "<br>";
