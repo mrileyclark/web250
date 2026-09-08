@@ -94,11 +94,11 @@ $cat1->describeAnimal("Whiskers", "Feline");
 $cat1->setAge(3);
 $cat1->color = "Orange";
 
-echo $dog1->bark() . "<br>";  // Output: Woof! My name is Buddy, the Golden Retriever Canine.
+echo $dog1->bark() . "<br>";  // Output: Woof! My name is Buddy, the Golden Retriever Canine. I am 5 years old.
 echo $dog1->fetch() . "<br>"; // Output: Buddy is fetching the ball!
 echo $dog1->sleep() . "<br>"; // Output: Buddy is sleeping.
 
-echo $cat1->meow() . "<br>"; // Output: Meow! My name is Whiskers, the Orange Feline.
+echo $cat1->meow() . "<br>"; // Output: Meow! My name is Whiskers, the Orange Feline. I am 3 years old.
 echo $cat1->climb() . "<br>"; // Output: Whiskers is climbing the tree!
 echo $cat1->sleep() . "<br>"; // Output: Whiskers is sleeping.
 
