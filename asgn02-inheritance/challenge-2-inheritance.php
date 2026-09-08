@@ -11,7 +11,7 @@ class Animal
   protected $species;
   private $age;
 
-  //give animal name and species and age
+  //give animal name and species
   public function describeAnimal($name, $species)
   {
     $this->name = $name;
