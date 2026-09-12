@@ -23,8 +23,40 @@
   $kiwi->flying = "no";
   echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->can_fly() . ".</p>";
   echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";
+  echo "<hr>";
 
   ?>
+
+  <h2>Static Examples</h2>
+  <h3>Before using the create method</h3>
+
+  <?php
+
+  // Display the static properties before creating any instances
+  echo "<p>Bird count: " . Bird::$instance_count . "</p>";
+  echo "<p>Flycatcher count: " . YellowBelliedFlyCatcher::$instance_count . "</p>";
+  echo "<p>Kiwi count: " . Kiwi::$instance_count . "</p>";
+
+  echo "<hr>";
+  ?>
+
+  <h3>After using the create method</h3>
+
+  <?php
+
+  // Display the static properties before creating any instances
+  Bird::create();
+  YellowBelliedFlyCatcher::create();
+  Kiwi::create();
+
+  echo "<p>Bird count: " . Bird::$instance_count . "</p>";
+  echo "<p>YellowBelliedFlyCatcher count: " . YellowBelliedFlyCatcher::$instance_count . "</p>";
+  echo "<p>Kiwi count: " . Kiwi::$instance_count . "</p>";
+  echo "<hr>";
+
+  ?>
+
+
 </body>
 
 </html>
