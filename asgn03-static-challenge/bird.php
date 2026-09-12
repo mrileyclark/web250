@@ -1,53 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>asgn02 Inheritance</title>
-</head>
+class Bird
+{
+  var $habitat;
+  var $food;
+  var $nesting = "tree";
+  var $conservation;
+  var $song = "chirp";
+  var $flying = "yes";
 
-<body>
-  <h1>Inheritance Examples</h1>
+  public static $instance_count = 0;
+  public static $egg_num = 0;
 
-  <?php
-  include 'Bird.php';
+  public static function create()
+  {
+    // new instance of Bird class
+    $bird = new Bird();
+    self::$instance_count++;
+  }
 
-  $bird = new Bird;
-  echo '<p>The generic song of any bird is "' . $bird->song . '".</p>';
+  public function can_fly()
+  {
+    // if ( $this->flying == "yes" ) {
+    //     $flying_string = "can fly";
+    // } else {
+    //     $flying_string = "is stuck on the ground";
+    // }
+    $flying_string = ($this->flying == "yes") ? "can fly" : "is stuck on the ground";
+    return  $flying_string;
+  }
+}
 
-  $fly_catcher = new YellowBelliedFlyCatcher;
-  echo '<p>The song of the ' . $fly_catcher->name . ' on breeding grounds is "' . $fly_catcher->song . '".</p>';
+class YellowBelliedFlyCatcher extends Bird
+{
+  var $name = "yellow-bellied flycatcher";
+  var $diet = "mostly insects.";
+  var $song = "flat chilk";
 
-  $kiwi = new Kiwi;
-  $kiwi->flying = "no";
-  echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->can_fly() . ".</p>";
-  echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";
-  echo "<hr>";
+  public static $egg_num = "3-4, sometimes 5.";
+}
 
-  ?>
-
-  <h2>Static Examples</h2>
-  <h3>Before using the create method</h3>
-
-  <?php
-  echo "<p>Bird count: " . Bird::$instance_count . "</p>";
-  echo "<p>Flycatcher count: " . YellowBelliedFlyCatcher::$instance_count . "</p>";
-  echo "<p>Kiwi count: " . Kiwi::$instance_count . "</p>";
-  echo "<hr>";
-  ?>
-
-  <h2>After using the create method</h2>
-  <?php
-  Bird::create();
-  YellowBelliedFlyCatcher::create();
-  Kiwi::create();
-  echo "<p>Bird count: " . Bird::$instance_count . "</p>";
-  echo "<p>Flycatcher count: " . YellowBelliedFlyCatcher::$instance_count . "</p>";
-  echo "<p>Kiwi count: " . Kiwi::$instance_count . "</p>";
-  echo "<hr>";
-  ?>
-
-</body>
-
-</html>
+class Kiwi extends Bird
+{
+  var $name = "kiwi";
+  var $diet = "omnivorous";
+  var $flying = "no";
+}
