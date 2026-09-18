@@ -7,16 +7,22 @@ class Bird
   public string $commonName;
   public string $latinName;
 
-  public function __construct($commonName, $latinName)
+  public function __construct($args)
   {
-    $this->commonName = $commonName;
-    $this->latinName = $latinName;
+    $this->commonName = $args['commonName'] ?? '';
+    $this->latinName = $args['latinName'] ?? '';
   }
 }
 
-$bird1 = new Bird("Robin", "Turdus migratorius");
+$bird1 = new Bird([
+  'commonName' => 'Robin',
+  'latinName' => 'Turdus migratorius'
+]);
 
-$bird2 = new Bird("Eastern Towhee", "Pipilo erythrophthalmus");
+$bird2 = new Bird([
+  'commonName' => 'Eastern Towhee',
+  'latinName' => 'Pipilo erythrophthalmus'
+]);
 
 echo "Common name: " . $bird1->commonName . "<br>";
 echo "Latin name: " . $bird1->latinName . "<br>";
