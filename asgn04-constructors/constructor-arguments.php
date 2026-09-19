@@ -15,7 +15,7 @@ class Bird
 }
 
 $bird1 = new Bird([
-  'commonName' => 'Robin',
+  'commonName' => 'Acadian Flycatcher',
   'latinName' => 'Turdus migratorius'
 ]);
 
