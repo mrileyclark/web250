@@ -28,6 +28,11 @@
 
       <?php
 
+      $parser = new ParseCSV(PRIVATE_PATH . '/used_bicycles.csv');
+      $bike_array = $parser->parse();
+
+      print_r($bike_array);
+
       //take instances to html
       $args = ['brand' => 'Trek', 'model' => 'Emonda', 'year' => 2017, 'gender' => 'Unisex', 'color' => 'black', 'category' => 'Road', 'weight_kg' => 1.5, 'price' => 1000.00];
       //create new bike instance
