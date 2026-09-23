@@ -31,26 +31,22 @@
       $parser = new ParseCSV(PRIVATE_PATH . '/used_bicycles.csv');
       $bike_array = $parser->parse();
 
-      print_r($bike_array);
-
-      //take instances to html
-      $args = ['brand' => 'Trek', 'model' => 'Emonda', 'year' => 2017, 'gender' => 'Unisex', 'color' => 'black', 'category' => 'Road', 'weight_kg' => 1.5, 'price' => 1000.00];
-      //create new bike instance
-      $bike = new Bicycle($args);
-
       ?>
 
-      <tr>
-        <td><?php echo h($bike->brand); ?></td>
-        <td><?php echo h($bike->model); ?></td>
-        <td><?php echo h($bike->year); ?></td>
-        <td><?php echo h($bike->category); ?></td>
-        <td><?php echo h($bike->gender); ?></td>
-        <td><?php echo h($bike->color); ?></td>
-        <td><?php echo h($bike->weight_kg()) . ' / ' . h($bike->weight_lbs()); ?></td>
-        <td><?php echo h($bike->condition()); ?></td>
-        <td><?php echo h('$' . number_format($bike->price, 2)); ?></td>
-      </tr>
+      <?php foreach ($bike_array as $args) { ?>
+        <?php $bike = new Bicycle($args); ?>
+        <tr>
+          <td><?php echo h($bike->brand); ?></td>
+          <td><?php echo h($bike->model); ?></td>
+          <td><?php echo h($bike->year); ?></td>
+          <td><?php echo h($bike->category); ?></td>
+          <td><?php echo h($bike->gender); ?></td>
+          <td><?php echo h($bike->color); ?></td>
+          <td><?php echo h($bike->weight_kg()) . ' / ' . h($bike->weight_lbs()); ?></td>
+          <td><?php echo h($bike->condition()); ?></td>
+          <td><?php echo h('$' . number_format($bike->price, 2)); ?></td>
+        </tr>
+      <?php } ?>
 
     </table>
   </div>

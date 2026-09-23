@@ -17,6 +17,13 @@ class Bicycle
 
   public const GENDERS = ['Mens', 'Womens', 'Unisex'];
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   protected const CONDITION_OPTIONS = [
     1 => 'Beat up',
     2 => 'Decent',
@@ -25,6 +32,13 @@ class Bicycle
     5 => 'Like New'
   ];
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   public function __construct($args = [])
   {
     //$this->brand = isset($args['brand']) ? $args['brand'] : '';
@@ -47,6 +61,13 @@ class Bicycle
     // }
   }
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   public function weight_kg()
   {
     return number_format($this->weight_kg, 2) . ' kg';
@@ -63,11 +84,25 @@ class Bicycle
     return number_format($weight_lbs, 2) . ' lbs';
   }
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   public function set_weight_lbs($value)
   {
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   public function condition()
   {
     if ($this->condition_id > 0) {

@@ -41,7 +41,8 @@ Your answer here.
 Your answer here.
 
 ### 6. `money_format()` vs `number_format()`
-Your answer here.
+Money format older PHP so used modern number_format. number_format helps make the text price from csv file look like currency and 
+I can control where the $ goes.
 
 ## Git History
 
@@ -52,5 +53,6 @@ asgn05_bike_bird_challenge.md 2026-09-23
 git log --oneline --graph --all --decorate
 ```
 ## AI Log
-- Question asked:
-- How the answer was used:
+
+- Asked how number_format could be used in td instead of money_format when .
+- Use to format price to currency correctly.

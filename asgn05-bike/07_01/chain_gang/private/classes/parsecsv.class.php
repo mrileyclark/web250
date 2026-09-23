@@ -3,6 +3,13 @@
 class ParseCSV
 {
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   public static $delimiter = ',';
 
   //private so cant be set directly only passed in with new instance or calling outside class
@@ -61,17 +68,38 @@ class ParseCSV
     return $this->data;
   }
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   //see result last results after parsing
   public function last_results()
   {
     return $this->data;
   }
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   public function row_count()
   {
     return $this->row_count;
   }
 
+  /*
+  * How it is used:
+  *
+  * Why it exists:
+  * What problem does it solve?
+  * What would break or become harder if we used a simpler approach?
+  */
   //clear data no dups
   private function reset()
   {
