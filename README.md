@@ -1,7 +1,7 @@
 # Bike and Bird Challenge
 
 ## Student
-Your Name
+Mary Clark
 
 ## Course
 WEB 250
@@ -54,5 +54,11 @@ git log --oneline --graph --all --decorate
 ```
 ## AI Log
 
-- Asked how number_format could be used in td instead of money_format when .
+- Asked how number_format could be used in td instead of money_format when using in <td>.
 - Use to format price to currency correctly.
+
+- Asked to comment the why's for Bicycle 1.4.
+- The assignment was updated so we only needed to do this for the Bird Class. I wanted to understand this better so I practiced here first.
+
+- Asked if I could still switch to bicycle branch out of sequence.   
+- Used this to get onto this branch after coding a good bit of the bicycle code on the main branch.
