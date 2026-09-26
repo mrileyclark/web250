@@ -45,6 +45,9 @@ ParseCSV::$delimiter = '|';
 $parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
 $bird_array = $parser->parse();
 
+echo '<pre>';
+print_r($bird_array);
+echo '</pre>';
 
 /*
  * TODO 3 -- Handle a missing or unreadable file
@@ -72,11 +75,15 @@ if ($bird_array === false) {
  */
 $birds = [];
 
-foreach ($bird_array as $bird_data) {
-  $birds[] = new Bird($bird_data);
+if (!$data_error) {
+  foreach ($bird_array as $args) {
+    $birds[] = new Bird($args);
+  }
 }
 
-
+echo '<pre>';
+print_r($birds);
+echo '</pre>';
 /*
  * OPTIONAL -- "go further" options 1 and 2 (sort and filter)
  *
@@ -136,5 +143,34 @@ foreach ($bird_array as $bird_data) {
  * $bird->wingspan_cm() rather than reaching for the property.
  */
 ?>
+
+<table style="border: 1px solid; border-collapse: collapse; width: 100%;">
+  <caption>Birds of western North Carolina, sorted by name.</caption>
+  <thead style="border: 1px solid;">
+    <tr>
+      <th style="border: 1px solid;">Bird</th>
+      <th style="border: 1px solid;">Habitat</th>
+      <th style="border: 1px solid;">Food</th>
+      <th style="border: 1px solid;">Nest</th>
+      <th style="border: 1px solid;">Behavior</th>
+      <th style="border: 1px solid;">Wingspan</th>
+      <th style="border: 1px solid;">Weight</th>
+      <th style="border: 1px solid;">Size</th>
+      <th style="border: 1px solid;">Conservation</th>
+      <th style="border: 1px solid;">Backyard tips</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($birds as $bird) { ?>
+      <tr>
+        <td style="border: 1px solid;"><?php echo h($bird->common_name); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->habitat); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->food); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->nest_placement); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->behavior); ?></td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
