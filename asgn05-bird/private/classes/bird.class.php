@@ -64,8 +64,7 @@ class Bird
    * method on ParseCSV. They often report the same number. Say when they
    * would not.
    */
-
-
+  public static int $count = 0;
 
   /*
    * TODO 3 -- Public constants
@@ -78,8 +77,9 @@ class Bird
    * Nothing in this assignment validates against them, but a filter menu or
    * an HTML form would read them, which is the reason they are public.
    */
+  public const HABITATS = ['Open woodlands', 'Forests', 'Open woodlands', 'Scrub', 'Open woodlands', 'High elevation', 'Scrub', 'Forests', 'High elevation', 'Fields', 'Wetlands',  'Forests', 'Cliff', 'Forests', 'Scrub', 'Forests'];
 
-
+  public const FOOD_TYPES = ['Insects', 'Insects', 'Nectar', 'Omnivore', 'Insects', 'Seeds', 'Seeds', 'Insects', 'Omnivore', 'Small Mammals', 'Fish', 'Insects', 'Birds', 'Insects', 'Insects', 'Nuts'];
 
   /*
    * TODO 4 -- A protected constant for the conservation scale
@@ -97,8 +97,12 @@ class Bird
    * HABITATS is public? And why does the CSV store the number 3 instead of
    * the words "Extreme concern"?
    */
-
-
+  protected const CONSERVATION_OPTIONS = [
+    1 => 'Low Concern',
+    2 => 'Moderate Concern',
+    3 => 'Extreme Concern',
+    4 => 'Extinct'
+  ];
 
   /*
    * TODO 5 -- The constructor
@@ -120,7 +124,20 @@ class Bird
    * why comment required: why one $args array instead of a parameter for each
    * column? What happens if someone reorders the columns in the CSV?
    */
-
+  public function __construct($args = [])
+  {
+    $this->common_name = $args['common_name'] ?? '';
+    $this->scientific_name = $args['scientific_name'] ?? '';
+    $this->habitat = $args['habitat'] ?? '';
+    $this->food = $args['food'] ?? '';
+    $this->nest_placement = $args['nest_placement'] ?? '';
+    $this->behavior = $args['behavior'] ?? '';
+    $this->backyard_tips = $args['backyard_tips'] ?? '';
+    $this->wingspan_cm = $args['wingspan_cm'] ?? 0;
+    $this->weight_g = $args['weight_g'] ?? 0;
+    $this->conservation_id = $args['conservation_id'] ?? 1;
+    Bird::$count++;
+  }
 
 
   /*

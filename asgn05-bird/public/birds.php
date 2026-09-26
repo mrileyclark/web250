@@ -45,9 +45,9 @@ ParseCSV::$delimiter = '|';
 $parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
 $bird_array = $parser->parse();
 
-echo '<pre>';
-print_r($bird_array);
-echo '</pre>';
+// echo '<pre>';
+// print_r($bird_array);
+// echo '</pre>';
 
 /*
  * TODO 3 -- Handle a missing or unreadable file
@@ -81,9 +81,9 @@ if (!$data_error) {
   }
 }
 
-echo '<pre>';
-print_r($birds);
-echo '</pre>';
+// echo '<pre>';
+// print_r($birds);
+// echo '</pre>';
 /*
  * OPTIONAL -- "go further" options 1 and 2 (sort and filter)
  *

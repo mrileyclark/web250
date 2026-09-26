@@ -62,3 +62,6 @@ git log --oneline --graph --all --decorate
 
 - Asked if I could still switch to bicycle branch out of sequence.   
 - Used this to get onto this branch after coding a good bit of the bicycle code on the main branch.
+
+- Asked why I was getting an error about accessing static property count as non static.   
+- Used this to understand this error message and correct the problem. Need. to call it Bird::$count++
