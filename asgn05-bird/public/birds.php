@@ -1,6 +1,6 @@
 <?php
-  require_once('../private/initialize.php');
-  $page_title = 'Sightings';
+require_once('../private/initialize.php');
+$page_title = 'Sightings';
 ?>
 
 <?php
@@ -32,7 +32,7 @@
  * why comment required: why can you set this from outside the class at all,
  * and why is that better than editing parsecsv.class.php?
  */
-
+ParseCSV::$delimiter = '|';
 
 
 /*
@@ -42,7 +42,8 @@
  * parse(). Build the path from the constant, not a relative path like
  * '../private/wnc-birds.csv'.
  */
-
+$parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
+$bird_array = $parser->parse();
 
 
 /*
@@ -56,8 +57,11 @@
  * its header, nav, and footer. Test it by renaming the CSV, loading the
  * page, and then renaming it back.
  */
+$data_error = false;
 
-
+if ($bird_array === false) {
+  $data_error = true;
+}
 
 /*
  * TODO 4 -- Build the objects
@@ -66,7 +70,11 @@
  * an array. In bicycles.php this happens inside the table markup; do it up
  * here instead so the markup below stays readable.
  */
+$birds = [];
 
+foreach ($bird_array as $bird_data) {
+  $birds[] = new Bird($bird_data);
+}
 
 
 /*
