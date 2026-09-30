@@ -156,8 +156,26 @@ class Bird
    * why comment required: on set_wingspan_in(), explain why a setter named
    * for inches writes to a property measured in centimeters.
    */
+  public function wingspan_cm()
+  {
+    return number_format($this->wingspan_cm, 2) . ' cm';
+  }
 
+  public function set_wingspan_cm($value)
+  {
+    $this->wingspan_cm = floatval($value);
+  }
 
+  public function wingspan_in()
+  {
+    $wingspan_in = floatval($this->wingspan_cm) * 0.393701;
+    return number_format($wingspan_in, 2) . ' in';
+  }
+
+  public function set_wingspan_in($value)
+  {
+    $this->wingspan_cm = floatval($value) / 0.393701;
+  }
 
   /*
    * TODO 7 -- Getters and setters for weight
@@ -165,8 +183,26 @@ class Bird
    * Same four-method pattern for weight_g / weight_oz.
    * 1 g = 0.0352740 oz.
    */
+  public function weight_g()
+  {
+    return number_format($this->weight_g, 2) . ' g';
+  }
 
+  public function set_weight_g($value)
+  {
+    $this->weight_g = floatval($value);
+  }
 
+  public function weight_oz()
+  {
+    $weight_oz = floatval($this->weight_g) * 0.0352740;
+    return number_format($weight_oz, 2) . ' in';
+  }
+
+  public function set_weight_oz($value)
+  {
+    $this->weight_g = floatval($value) / 0.0352740;
+  }
 
   /*
    * TODO 8 -- conservation()
@@ -182,8 +218,14 @@ class Bird
    *
    * why comment required: why self:: and not $this->?
    */
-
-
+  public function conservation()
+  {
+    if ($this->conservation_id > 0) {
+      return self::CONSERVATION_OPTIONS[$this->conservation_id];
+    } else {
+      return "Unknown";
+    }
+  }
 
   /*
    * TODO 9 -- size_class()
@@ -196,7 +238,16 @@ class Bird
    * useful number of birds in each group. Document the numbers you chose in
    * your comment and say why they suit this data.
    */
-
+  public function size_class()
+  {
+    if ($this->wingspan_cm <= 50) {
+      return "Small";
+    } elseif ($this->wingspan_cm >= 51 && $this->wingspan_cm <= 90) {
+      return "Medium";
+    } else {
+      return "Large";
+    }
+  }
 
 
   /*
@@ -217,4 +268,8 @@ class Bird
    *
    * why comment required: state which approach you chose and why.
    */
+  public function display_name()
+  {
+    return "{$this->common_name} ({$this->scientific_name})";
+  }
 }

@@ -81,9 +81,9 @@ if (!$data_error) {
   }
 }
 
-// echo '<pre>';
-// print_r($birds);
-// echo '</pre>';
+echo '<pre>';
+print_r($birds);
+echo '</pre>';
 /*
  * OPTIONAL -- "go further" options 1 and 2 (sort and filter)
  *
@@ -163,11 +163,18 @@ if (!$data_error) {
   <tbody>
     <?php foreach ($birds as $bird) { ?>
       <tr>
-        <td style="border: 1px solid;"><?php echo h($bird->common_name); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->common_name); ?><br>
+          <em><?php echo h($bird->scientific_name); ?></em>
+        </td>
         <td style="border: 1px solid;"><?php echo h($bird->habitat); ?></td>
         <td style="border: 1px solid;"><?php echo h($bird->food); ?></td>
         <td style="border: 1px solid;"><?php echo h($bird->nest_placement); ?></td>
         <td style="border: 1px solid;"><?php echo h($bird->behavior); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->wingspan_cm()) . ' / ' . h($bird->wingspan_in()); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->weight_g()) . ' / ' . h($bird->weight_oz()); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->size_class()); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->conservation()); ?></td>
+        <td style="border: 1px solid;"><?php echo h($bird->backyard_tips); ?></td>
       </tr>
     <?php } ?>
   </tbody>
