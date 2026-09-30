@@ -65,3 +65,9 @@ git log --oneline --graph --all --decorate
 
 - Asked why I was getting an error about accessing static property count as non static.   
 - Used this to understand this error message and correct the problem. Need. to call it Bird::$count++
+
+- Asked routing getter/setter.   
+- Used this to ...
+
+- Asked why ParseCSV error when trying to dipslay row_count()ter.   
+- Used this to ...

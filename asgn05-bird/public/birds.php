@@ -30,7 +30,15 @@ $page_title = 'Sightings';
  * for never exists and every property falls back to its default.
  *
  * why comment required: why can you set this from outside the class at all,
- * and why is that better than editing parsecsv.class.php?
+ * and why is that better than editing parsecsv.class.php? 
+ * 
+ * $delimiter is public static, which allows another file to access and change
+ * the class without creating a ParseCSV object.
+ * 
+ * ParseCSV has a comma as a default delimiter. Setting it here allows bird.php to use a any desired 
+ * delimiter for this file without changing the ParseCSV. This way ParseCSV class isn't modified everytime
+ * a CSV file calls for a different delimiter to be used.
+ *  
  */
 ParseCSV::$delimiter = '|';
 
@@ -79,11 +87,13 @@ if (!$data_error) {
   foreach ($bird_array as $args) {
     $birds[] = new Bird($args);
   }
+  //for go further toString
+  $featured = $birds[array_rand($birds)];
 }
 
-echo '<pre>';
-print_r($birds);
-echo '</pre>';
+// echo '<pre>';
+// print_r($birds);
+// echo '</pre>';
 /*
  * OPTIONAL -- "go further" options 1 and 2 (sort and filter)
  *
@@ -93,27 +103,40 @@ echo '</pre>';
  * directly.
  */
 
+
+
 ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
+<p>Featured bird:</p>
+<p><?php echo h($featured); ?></p>
+<br>
 
-<?php /* TODO 5 -- if you set an error flag in TODO 3, print the message here
-         and skip the table. */ ?>
 
 <?php
-/*
+/* 
+*TODO 5 -- if you set an error flag in TODO 3, print the message here
+*and skip the table. 
+*/
+if ($data_error) {
+  echo "<p>Unable to load the bird data.</p>";
+} else {
+
+  /*
  * TODO 6 -- The record count
  *
  * Print a line reporting how many records were in the file, using the
  * row_count() method. If you added the static counter to Bird, print that
  * too. Notice whether the two numbers agree.
  */
+  echo "<p>Showing " . h($parser->row_count()) . " records in the data file. "
+    . h(Bird::$count) . " Bird objects were created for this page.</p>";
 ?>
 
-<?php
-/*
+  <?php
+  /*
  * TODO 7 -- The table
  *
  * Build it with <thead> and <tbody>, a <caption>, and scope="col" on each
@@ -142,42 +165,46 @@ echo '</pre>';
  * Call your methods, not the raw properties, for anything measured or coded:
  * $bird->wingspan_cm() rather than reaching for the property.
  */
-?>
+  ?>
 
-<table style="border: 1px solid; border-collapse: collapse; width: 100%;">
-  <caption>Birds of western North Carolina, sorted by name.</caption>
-  <thead style="border: 1px solid;">
-    <tr>
-      <th style="border: 1px solid;">Bird</th>
-      <th style="border: 1px solid;">Habitat</th>
-      <th style="border: 1px solid;">Food</th>
-      <th style="border: 1px solid;">Nest</th>
-      <th style="border: 1px solid;">Behavior</th>
-      <th style="border: 1px solid;">Wingspan</th>
-      <th style="border: 1px solid;">Weight</th>
-      <th style="border: 1px solid;">Size</th>
-      <th style="border: 1px solid;">Conservation</th>
-      <th style="border: 1px solid;">Backyard tips</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($birds as $bird) { ?>
+  <table style="border: 1px solid;">
+    <caption>Birds of western North Carolina, sorted by name.</caption>
+    <thead style="border: 1px solid;">
       <tr>
-        <td style="border: 1px solid;"><?php echo h($bird->common_name); ?><br>
-          <em><?php echo h($bird->scientific_name); ?></em>
-        </td>
-        <td style="border: 1px solid;"><?php echo h($bird->habitat); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->food); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->nest_placement); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->behavior); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->wingspan_cm()) . ' / ' . h($bird->wingspan_in()); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->weight_g()) . ' / ' . h($bird->weight_oz()); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->size_class()); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->conservation()); ?></td>
-        <td style="border: 1px solid;"><?php echo h($bird->backyard_tips); ?></td>
+        <th scope="col" style="border: 1px solid;">Bird</th>
+        <th scope="col" style="border: 1px solid;">Habitat</th>
+        <th scope="col" style="border: 1px solid;">Food</th>
+        <th scope="col" style="border: 1px solid;">Nest</th>
+        <th scope="col" style="border: 1px solid;">Behavior</th>
+        <th scope="col" style="border: 1px solid;">Wingspan</th>
+        <th scope="col" style="border: 1px solid;">Weight</th>
+        <th scope="col" style="border: 1px solid;">Size</th>
+        <th scope="col" style="border: 1px solid;">Conservation</th>
+        <th scope="col" style="border: 1px solid;">Backyard tips</th>
       </tr>
-    <?php } ?>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <?php foreach ($birds as $bird) { ?>
+        <tr>
+          <td style="border: 1px solid;"><?php echo h($bird->common_name); ?><br>
+            <em><?php echo h($bird->scientific_name); ?></em>
+          </td>
+          <td style="border: 1px solid;"><?php echo h($bird->habitat); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->food); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->nest_placement); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->behavior); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->wingspan_cm()) . ' / ' . h($bird->wingspan_in()); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->weight_g()) . ' / ' . h($bird->weight_oz()); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->size_class()); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->conservation()); ?></td>
+          <td style="border: 1px solid;"><?php echo h($bird->backyard_tips); ?></td>
+        </tr>
+      <?php } ?>
+    </tbody>
+  </table>
+
+<?php
+}
+?>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

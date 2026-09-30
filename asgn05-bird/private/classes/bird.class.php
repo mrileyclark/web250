@@ -40,6 +40,10 @@ class Bird
    *
    * why comment required: on the first protected property, explain why it is
    * protected when common_name is public.
+   * Common name is public because it is just descriptive text. $wingspan_cm is protected
+   * because it is a measurement accessed through $wing_span methods. These methods help
+   * control how the value is displayed and converted. Outside code cant change it by accident
+   * unless use the class methods
    */
 
   public $common_name;
@@ -77,9 +81,9 @@ class Bird
    * Nothing in this assignment validates against them, but a filter menu or
    * an HTML form would read them, which is the reason they are public.
    */
-  public const HABITATS = ['Open woodlands', 'Forests', 'Open woodlands', 'Scrub', 'Open woodlands', 'High elevation', 'Scrub', 'Forests', 'High elevation', 'Fields', 'Wetlands',  'Forests', 'Cliff', 'Forests', 'Scrub', 'Forests'];
+  public const HABITATS = ['Open woodlands', 'Forests', 'Scrub', 'High elevation', 'Fields', 'Wetland', 'Cliff'];
 
-  public const FOOD_TYPES = ['Insects', 'Insects', 'Nectar', 'Omnivore', 'Insects', 'Seeds', 'Seeds', 'Insects', 'Omnivore', 'Small Mammals', 'Fish', 'Insects', 'Birds', 'Insects', 'Insects', 'Nuts'];
+  public const FOOD_TYPES = ['Insects', 'Nectar', 'Omnivore', 'Seeds', 'Small Mammals', 'Fish', 'Birds', 'Nuts'];
 
   /*
    * TODO 4 -- A protected constant for the conservation scale
@@ -133,12 +137,11 @@ class Bird
     $this->nest_placement = $args['nest_placement'] ?? '';
     $this->behavior = $args['behavior'] ?? '';
     $this->backyard_tips = $args['backyard_tips'] ?? '';
-    $this->wingspan_cm = $args['wingspan_cm'] ?? 0;
-    $this->weight_g = $args['weight_g'] ?? 0;
+    $this->set_wingspan_cm($args['wingspan_cm'] ?? 0);
+    $this->set_weight_g($args['weight_g'] ?? 0);
     $this->conservation_id = $args['conservation_id'] ?? 1;
     Bird::$count++;
   }
-
 
   /*
    * TODO 6 -- Getters and setters for wingspan
@@ -196,7 +199,7 @@ class Bird
   public function weight_oz()
   {
     $weight_oz = floatval($this->weight_g) * 0.0352740;
-    return number_format($weight_oz, 2) . ' in';
+    return number_format($weight_oz, 2) . ' oz';
   }
 
   public function set_weight_oz($value)
@@ -220,7 +223,7 @@ class Bird
    */
   public function conservation()
   {
-    if ($this->conservation_id > 0) {
+    if (isset(self::CONSERVATION_OPTIONS[$this->conservation_id])) {
       return self::CONSERVATION_OPTIONS[$this->conservation_id];
     } else {
       return "Unknown";
@@ -237,12 +240,14 @@ class Bird
    * hummingbird is 11 cm, the raven is 130 cm) and pick thresholds that put a
    * useful number of birds in each group. Document the numbers you chose in
    * your comment and say why they suit this data.
+   * google considere wing span size for small medium large so 
+   * that is why I chose this cutoff  
    */
   public function size_class()
   {
-    if ($this->wingspan_cm <= 50) {
+    if ($this->wingspan_cm <= 28) {
       return "Small";
-    } elseif ($this->wingspan_cm >= 51 && $this->wingspan_cm <= 90) {
+    } elseif ($this->wingspan_cm <= 90) {
       return "Medium";
     } else {
       return "Large";
@@ -271,5 +276,22 @@ class Bird
   public function display_name()
   {
     return "{$this->common_name} ({$this->scientific_name})";
+  }
+
+  /*
+   * Option 4: __toString()
+   * Implement: public function __toString()
+   * to return a one-line summary of a bird.
+   * Use it somewhere on the page.
+   * Explain what __toString() allows that a normal method named:
+   * summary()
+   * would not do automatically.
+   */
+  public function __toString()
+  {
+    return "The " . $this->common_name . ", typically considered to be of a "
+      . strtolower($this->size_class()) . " size, lives in "
+      . strtolower($this->habitat) . " and eats "
+      . strtolower($this->food) . ".";
   }
 }
