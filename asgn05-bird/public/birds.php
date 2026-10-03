@@ -36,12 +36,11 @@ $page_title = 'Sightings';
  * the class without creating a ParseCSV object.
  * 
  * ParseCSV has a comma as a default delimiter. Setting it here allows bird.php to use a any desired 
- * delimiter for this file without changing the ParseCSV. This way ParseCSV class isn't modified everytime
+ * delimiter for this file without changing the ParseCSV. This way ParseCSV class isn't modified every time
  * a CSV file calls for a different delimiter to be used.
  *  
  */
 ParseCSV::$delimiter = '|';
-
 
 /*
  * TODO 2 -- Parse the file

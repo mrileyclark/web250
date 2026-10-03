@@ -40,10 +40,11 @@ class Bird
    *
    * why comment required: on the first protected property, explain why it is
    * protected when common_name is public.
+   * 
    * Common name is public because it is just descriptive text. $wingspan_cm is protected
    * because it is a measurement accessed through $wing_span methods. These methods help
-   * control how the value is displayed and converted. Outside code cant change it by accident
-   * unless use the class methods
+   * control how the value is displayed and converted. Outside code cant change it by 
+   * accident unless use the class methods
    */
 
   public $common_name;
@@ -67,6 +68,8 @@ class Bird
    * why comment required: explain how this differs from the row_count()
    * method on ParseCSV. They often report the same number. Say when they
    * would not.
+   * 
+   * row_count() counts the number of rows in the CSV file, while $count counts the number of Bird objects created. If some rows in the CSV are skipped or not used to create Bird objects, $count will be less than row_count().
    */
   public static int $count = 0;
 
@@ -100,6 +103,9 @@ class Bird
    * why comment required: two things to address. Why is this protected when
    * HABITATS is public? And why does the CSV store the number 3 instead of
    * the words "Extreme concern"?
+   * 
+   * CONSERVATION_OPTIONS is protected because it is only used inside the Bird class to turn the conservation ID into a readable description. 
+   * HABITATS is public because other parts of the program may need to access it. The CSV uses numbers like 3 instead of words to keep the data consistent and make it easier to sort and compare.
    */
   protected const CONSERVATION_OPTIONS = [
     1 => 'Low Concern',
@@ -127,6 +133,10 @@ class Bird
    *
    * why comment required: why one $args array instead of a parameter for each
    * column? What happens if someone reorders the columns in the CSV?
+   *
+   * Using one $args array lets the constructor use the column names instead
+   * of depending on the order of the CSV columns. If the columns are reordered,
+   * the constructor still gets the correct values because it uses the column names.
    */
   public function __construct($args = [])
   {
@@ -158,6 +168,7 @@ class Bird
    *
    * why comment required: on set_wingspan_in(), explain why a setter named
    * for inches writes to a property measured in centimeters.
+   * The inches setter converts the inches to centimeters before storing the value because the wingspan is stored in centimeters internally. This keeps the stored value consistent.
    */
   public function wingspan_cm()
   {
@@ -220,6 +231,8 @@ class Bird
    * temporarily setting a conservation_id of 99 in the CSV.
    *
    * why comment required: why self:: and not $this->?
+   * self:: is used to access the constant directly from the class so it is not dependent on any specific instance of the class
+   * $this-> is used for instance properties and methods because it refers to the current object. Since constants are not tied to a specific instance, self:: is the appropriate way to access them.
    */
   public function conservation()
   {
@@ -240,8 +253,10 @@ class Bird
    * hummingbird is 11 cm, the raven is 130 cm) and pick thresholds that put a
    * useful number of birds in each group. Document the numbers you chose in
    * your comment and say why they suit this data.
-   * google considered wing span size for small medium large so 
-   * that is why I chose this cutoff  
+   * 
+   * I chose 28 cm and 90 cm as the cutoffs based on the wingspan range in the CSV
+   * and general bird size information I Googled. This gives the birds in this dataset useful
+   * small, medium, and large groups.
    */
   public function size_class()
   {
@@ -253,7 +268,6 @@ class Bird
       return "Large";
     }
   }
-
 
   /*
    * TODO 10 -- display_name()
@@ -272,6 +286,7 @@ class Bird
    * markup.
    *
    * why comment required: state which approach you chose and why.
+   * Used A because Bird class should return plain text and birds.php should add the <em> tags. This way Bird class is not responsible for formatting and can be used in other contexts without HTML.
    */
   public function display_name()
   {
@@ -280,8 +295,7 @@ class Bird
 
   /*
    * Option 4: __toString()
-   * Implement: public function __toString()
-   * to return a one-line summary of a bird.
+   * Implement: public function __toString() to return a one-line summary of a bird.
    * Use it somewhere on the page.
    * Explain what __toString() allows that a normal method named:
    * summary() would not do automatically.
