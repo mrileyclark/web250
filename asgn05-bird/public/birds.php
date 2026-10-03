@@ -87,6 +87,7 @@ if (!$data_error) {
   foreach ($bird_array as $args) {
     $birds[] = new Bird($args);
   }
+
   //for go further toString
   $featured = $birds[array_rand($birds)];
 }
@@ -102,18 +103,38 @@ if (!$data_error) {
  * control BEFORE you use it. Explain in a comment why you cannot trust $_GET
  * directly.
  */
+$allowed_sorts = [
+  'common_name',
+  'habitat',
+  'food',
+  'behavior'
+];
 
+$sort = 'common_name';
 
+if (isset($_GET['sort'])) {
+  if (in_array($_GET['sort'], $allowed_sorts)) {
+    // use value here
+    $sort = $_GET['sort'];
+  }
+}
+
+function sort_birds($a, $b)
+{
+  //sort links when clicked, sort the birds by the column clicked.
+  global $sort;
+  return strnatcmp($a->$sort, $b->$sort);
+}
+
+usort($birds, 'sort_birds');
 
 ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
-<p>Featured bird:</p>
+<p><strong>Featured bird:</strong></p>
 <p><?php echo h($featured); ?></p>
-<br>
-
 
 <?php
 /* 
@@ -171,11 +192,11 @@ if ($data_error) {
     <caption>Birds of western North Carolina, sorted by name.</caption>
     <thead style="border: 1px solid;">
       <tr>
-        <th scope="col" style="border: 1px solid;">Bird</th>
-        <th scope="col" style="border: 1px solid;">Habitat</th>
-        <th scope="col" style="border: 1px solid;">Food</th>
+        <th scope="col" style="border: 1px solid;"><a href="birds.php?sort=common_name">Bird</a></th>
+        <th scope="col" style="border: 1px solid;"><a href="birds.php?sort=habitat">Habitat</a></th>
+        <th scope="col" style="border: 1px solid;"><a href="birds.php?sort=food">Food</a></th>
         <th scope="col" style="border: 1px solid;">Nest</th>
-        <th scope="col" style="border: 1px solid;">Behavior</th>
+        <th scope="col" style="border: 1px solid;"><a href="birds.php?sort=behavior">Behavior</a></th>
         <th scope="col" style="border: 1px solid;">Wingspan</th>
         <th scope="col" style="border: 1px solid;">Weight</th>
         <th scope="col" style="border: 1px solid;">Size</th>

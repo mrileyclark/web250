@@ -240,7 +240,7 @@ class Bird
    * hummingbird is 11 cm, the raven is 130 cm) and pick thresholds that put a
    * useful number of birds in each group. Document the numbers you chose in
    * your comment and say why they suit this data.
-   * google considere wing span size for small medium large so 
+   * google considered wing span size for small medium large so 
    * that is why I chose this cutoff  
    */
   public function size_class()
@@ -284,8 +284,9 @@ class Bird
    * to return a one-line summary of a bird.
    * Use it somewhere on the page.
    * Explain what __toString() allows that a normal method named:
-   * summary()
-   * would not do automatically.
+   * summary() would not do automatically.
+   * 
+   * _toString() will run automatically when Bird object uses a string, while a normal method would not. It would have to be called.
    */
   public function __toString()
   {
