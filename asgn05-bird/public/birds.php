@@ -141,7 +141,7 @@ if (!$data_error) {
 *and skip the table. 
 */
 if ($data_error) {
-  echo "<p>Unable to load the bird data.</p>";
+  echo "<p style='color: red;'><strong>Unable to load the bird data.</strong></p>";
 } else {
   //do more toString method in Bird class to display more information about the bird.
   echo "<p>" . h($birds[0]) . "</p>";
