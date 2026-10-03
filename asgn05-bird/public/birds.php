@@ -108,6 +108,7 @@ $allowed_sorts = [
 
 $sort = 'common_name';
 
+// $_GET can be changed by the user, only allow values from approved list.
 if (isset($_GET['sort'])) {
   if (in_array($_GET['sort'], $allowed_sorts)) {
     //$_GET can be changed by the user, only allow values from approved list.
