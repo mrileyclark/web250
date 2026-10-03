@@ -85,5 +85,3 @@ git log --oneline --graph --all --decorate
 
 - Asked to guide through setting up how to sort table headers after struggling with it for awhile.   
 - Used this to build functionality to check values against approved list and sort function
-
-
