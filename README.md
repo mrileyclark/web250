@@ -45,11 +45,710 @@ Money format older PHP so used modern number_format. number_format helps make th
 I can control where the $ goes.
 
 ## Git History
-
  
-```text
-git log --oneline --graph --all --decorate
-```
+(base) maryclark@Marys-MacBook-Pro web250 % git log --oneline --graph --all --decorate
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+* 5aea4f5 Reomved age comment from describeAnimal function comment
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+* 5aea4f5 Reomved age comment from describeAnimal function comment
+* 4dad26f Added updated comments to output messages
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+* 5aea4f5 Reomved age comment from describeAnimal function comment
+* 4dad26f Added updated comments to output messages
+*   4f2d09a Completed the access challenge merge changes didnt save
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+* 5aea4f5 Reomved age comment from describeAnimal function comment
+* 4dad26f Added updated comments to output messages
+*   4f2d09a Completed the access challenge merge changes didnt save
+|\  
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+* 5aea4f5 Reomved age comment from describeAnimal function comment
+* 4dad26f Added updated comments to output messages
+*   4f2d09a Completed the access challenge merge changes didnt save
+|\  
+| * b91e1c4 (asgn02-access-control) Completed the access challenge part 2
+:...skipping...
+* 073ac73 (HEAD -> main, origin/main, origin/asgn05-bird, origin/HEAD, asgn05-bird) asgn05-created added color to error message
+* 9d8ce29 asgn05-created added color to error message for visibility
+* 2261b0b asgn05-created added concept check and AI comments
+* 2578deb asgn05-created why comments for required todos
+* c647699 asgn05-bird build remove random summary functionality
+* b803824 asgn05-bird build random sort feature
+* 90c37c7 asgn05-bird build random bird for featured bird toString option
+* 9bbdfee asgn05-bird build size and display name and go further toString
+* 86f8db9 asgn05-bird build constants and constructor
+* a5fde32 asgn05-bird build bird table
+* 896d019 asgn05-bird build bird class properites and bird.php parse and delimiter
+* f0c3395 asgn05-bird add starter files and inspect CSV
+* 73bea17 (origin/asgn05-bike, asgn05-bike) updated read me AI log
+* 4850c3e created instances from csv file
+* d3154ba improvements added to the parse functionality
+* 1b56ae3 connect ParseCSV to inventory page
+*   3633260 Merge branch 'main' of https://github.com/mrileyclark/web250
+|\  
+| * 798e2d4 Add comment to .gitignore for clarity
+* | 3c4d5bf Updated money_format to number_format
+* | 9266ac5 Created autoload function
+* | 64e0e5b Created Bicycle Class
+* | 05ba11f Starting asgn05-bike
+|/  
+* 714d483 (asgn04-constructor) Adding autoload code
+* 659a930 Adding constructor args updated code
+* f1b4e3a Adding constructor args code
+* 5e4c322 (asgn03-static) Starting asgn04-constructors
+* 4ae54fd Complete index file challenge
+* c8330ed Complete bird file challenge
+* 410421f Starting asgn03 Static Methods
+* 79bee8a Updated bug code
+* 5aea4f5 Reomved age comment from describeAnimal function comment
+* 4dad26f Added updated comments to output messages
+*   4f2d09a Completed the access challenge merge changes didnt save
+|\  
+| * b91e1c4 (asgn02-access-control) Completed the access challenge part 2
+* | cfc51b9 Merge branch 'asgn02-access-control'
+:
 ## AI Log
 
 - Asked how number_format could be used in td instead of money_format when using in <td>.
