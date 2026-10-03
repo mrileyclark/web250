@@ -87,9 +87,6 @@ if (!$data_error) {
   foreach ($bird_array as $args) {
     $birds[] = new Bird($args);
   }
-
-  //for go further toString
-  $featured = $birds[array_rand($birds)];
 }
 
 // echo '<pre>';
@@ -114,7 +111,7 @@ $sort = 'common_name';
 
 if (isset($_GET['sort'])) {
   if (in_array($_GET['sort'], $allowed_sorts)) {
-    // use value here
+    //$_GET can be changed by the user, only allow values from approved list.
     $sort = $_GET['sort'];
   }
 }
@@ -126,15 +123,17 @@ function sort_birds($a, $b)
   return strnatcmp($a->$sort, $b->$sort);
 }
 
-usort($birds, 'sort_birds');
+if (!$data_error) {
+  usort($birds, 'sort_birds');
+}
 
 ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
-<p><strong>Featured bird:</strong></p>
-<p><?php echo h($featured); ?></p>
+<p><strong>Bird Summary</strong></p>
+
 
 <?php
 /* 
@@ -144,6 +143,8 @@ usort($birds, 'sort_birds');
 if ($data_error) {
   echo "<p>Unable to load the bird data.</p>";
 } else {
+  //do more toString method in Bird class to display more information about the bird.
+  echo "<p>" . h($birds[0]) . "</p>";
 
   /*
  * TODO 6 -- The record count
