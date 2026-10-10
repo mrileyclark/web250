@@ -273,6 +273,6 @@ ON DUPLICATE KEY UPDATE sex = sex;
 COMMIT;
 
 -- Expected seed-only totals: 8, 17, 18. These are three result sets.
-SELECT COUNT(*) AS bird_count FROM birds;
-SELECT COUNT(*) AS image_count FROM bird_images;
-SELECT COUNT(*) AS link_count FROM bird_image_links;
+-- SELECT COUNT(*) AS bird_count FROM birds;
+-- SELECT COUNT(*) AS image_count FROM bird_images;
+-- SELECT COUNT(*) AS link_count FROM bird_image_links;

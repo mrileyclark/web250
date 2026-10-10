@@ -2,16 +2,29 @@
 
 class Database
 {
-    private static ?PDO $connection = null;
-
-    public static function connect(): PDO
-    {
-        if (self::$connection instanceof PDO) {
-            return self::$connection;
-        }
-
-        // Part 5: build the DSN, create a PDO object, and return it.
-        // Replace the exception below with your completed code.
-        throw new LogicException('Complete Database::connect() in Part 5.');
+  // Store a PDO object, or null before the first connection.
+  private static ?PDO $connection = null;
+  public static function connect(): PDO
+  {
+    // Reuse this request's connection instead of opening another one.
+    if (self::$connection instanceof PDO) {
+      return self::$connection;
     }
+    // The DSN tells PDO which driver, server, and database to use.
+    $dsn = 'mysql:host=' . DB_HOST
+      . ';port=' . DB_PORT
+      . ';dbname=' . DB_NAME
+      . ';charset=utf8mb4';
+    self::$connection = new PDO(
+      $dsn,
+      DB_USER,
+      DB_PASS,
+      [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+      ]
+    );
+    return self::$connection;
+  }
 }
