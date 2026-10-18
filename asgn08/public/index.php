@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../private/initialize.php';
+require_once __DIR__ . '/../private/classes/Bird.php';
 
 $database_name = '';
 $summary = [];
@@ -7,6 +8,10 @@ $error_message = null;
 
 try {
   $database = Database::connect();
+
+  // Set the database for the Bird class to use for its queries.
+  Bird::set_database($database);
+
   // Each query returns one value. fetchColumn() retrieves that value.
   $database_name = (string) $database->query('SELECT DATABASE()')->fetchColumn();
   $bird_count = (int) $database->query('SELECT COUNT(*) FROM birds')->fetchColumn();
@@ -37,6 +42,7 @@ try {
 
 <body>
   <h1>WNC Birds Database Check</h1>
+  <p><a href="birds.php">View Bird Directory</a></p>
   <?php if ($error_message !== null): ?>
     <p><?= h($error_message) ?></p>
   <?php else: ?>
