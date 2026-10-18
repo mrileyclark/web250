@@ -67,7 +67,6 @@ final class Bird
     // Execute the prepared statement.
     $statement->execute();
 
-
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
     // If no row is found, return null 
@@ -78,7 +77,7 @@ final class Bird
     return self::from_row($row);
   }
 
-  // Refactoring task: both query methods should reuse this single mapper.
+  // Refactoring step
   private static function from_row(array $row): Bird
   {
     // TODO: Populate all seven properties and return the Bird object.

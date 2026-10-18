@@ -43,25 +43,25 @@ try {
     <p>No birds were found in the directory.</p>
 
   <?php else: ?>
-    <table>
+    <table style="border: 1px solid black;">
       <caption>Bird species directory</caption>
       <thead>
         <tr>
-          <th scope="col">Common Name</th>
-          <th scope="col">Scientific Name</th>
-          <th scope="col">Primary Habitat</th>
-          <th scope="col">Seasonal Status</th>
-          <th scope="col">Details</th>
+          <th scope="col" style="border: 1px solid black;">Common Name</th>
+          <th scope="col" style="border: 1px solid black;">Scientific Name</th>
+          <th scope="col" style="border: 1px solid black;">Primary Habitat</th>
+          <th scope="col" style="border: 1px solid black;">Seasonal Status</th>
+          <th scope="col" style="border: 1px solid black;">Details</th>
         </tr>
       </thead>
       <tbody>
         <?php foreach ($birds as $bird): ?>
           <tr>
-            <td><?= h($bird->common_name) ?></td>
-            <td><?= h($bird->scientific_name) ?></td>
-            <td><?= h($bird->primary_habitat) ?></td>
-            <td><?= h($bird->seasonal_status) ?></td>
-            <td>
+            <td style="border: 1px solid black;"><?= h($bird->common_name) ?></td>
+            <td style="border: 1px solid black;"><?= h($bird->scientific_name) ?></td>
+            <td style="border: 1px solid black;"><?= h($bird->primary_habitat) ?></td>
+            <td style="border: 1px solid black;"><?= h($bird->seasonal_status) ?></td>
+            <td style="border: 1px solid black;">
               <a href="bird.php?id=<?= (int) $bird->id ?>">
                 View details
               </a>
