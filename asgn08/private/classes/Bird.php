@@ -29,9 +29,9 @@ final class Bird
   public static function find_all(): array
   {
     // TODO: SELECT all birds, sorted by common_name. Return Bird objects.
-    if (self::$database === null) {
-      throw new RuntimeException('Call set_database() before find_all().');
-    }
+    // if (self::$database === null) {
+    //   throw new RuntimeException('Call set_database() before find_all().');
+    // }
 
     $sql = 'SELECT id, common_name, scientific_name, family_name, primary_habitat, seasonal_status, description 
           FROM birds ORDER BY common_name';
@@ -53,9 +53,9 @@ final class Bird
   public static function find_by_id(int $id): ?self
   {
     // TODO: Use a prepared statement; return a Bird or null.
-    if (self::$database === null) {
-      throw new RuntimeException('Call set_database() before find_by_id().');
-    }
+    // if (self::$database === null) {
+    //   throw new RuntimeException('Call set_database() before find_by_id().');
+    // }
 
     $sql = 'SELECT id, common_name, scientific_name, family_name, primary_habitat, seasonal_status, description 
           FROM birds WHERE id = :id';

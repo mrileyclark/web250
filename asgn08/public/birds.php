@@ -12,8 +12,8 @@ $birds = [];
 $error_message = null;
 
 try {
-  $database = Database::connect();
-  Bird::set_database($database);
+  //database = Database::connect();
+  //Bird::set_database($database);
   $birds = Bird::find_all();
 } catch (PDOException $exception) {
   http_response_code(500);
@@ -37,7 +37,7 @@ try {
   <p><a href="index.php">Back to Assignment Home</a></p>
 
   <?php if ($error_message !== null): ?>
-    <p><?= h($error_message) ?></p>
+    <p><?= h($error_message) ?></p>x
 
   <?php elseif (empty($birds)): ?>
     <p>No birds were found in the directory.</p>

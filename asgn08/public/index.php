@@ -37,7 +37,7 @@ try {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>asgn07 - WNC Birds Database Check</title>
+  <title>asgn08 - WNC Birds Database Check</title>
 </head>
 
 <body>
@@ -69,6 +69,9 @@ try {
     </table>
     <p>The image files are saved for a future assignment. No bird list,
       image gallery, or resizing is included here.</p>
+    <h2>Explore</h2>
+    <p><a href="sandbox_active_record.php">Back to Active Directory</a></p>
+    <p><a href="../../index.php">Back to Assignments Page</a></p>
   <?php endif; ?>
 </body>
 

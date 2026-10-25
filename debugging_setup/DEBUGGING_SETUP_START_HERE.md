@@ -14,3 +14,4 @@ This is a **separate assignment from asgn08**, and it has a **separate 100-point
 10. Paste **both** GitHub and webhost URLs into the separate **Debugging Setup** Moodle activity.
 
 No database, API key, `.env` file, or Homebrew installation is needed.
+ 

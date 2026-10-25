@@ -2,7 +2,7 @@
 
 class Database
 {
-  // Store a PDO object, or null before the first connection.
+  // Store a PDO object, or null before the first connection. Interface for accessing the database connection.
   private static ?PDO $connection = null;
   public static function connect(): PDO
   {

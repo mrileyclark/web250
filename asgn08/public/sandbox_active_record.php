@@ -46,6 +46,7 @@ function sandbox_h(string $value): string
         </li>
       <?php endforeach; ?>
     </ul>
+    <p><a href="birds.php">Back to Bird Directory</a></p>
   <?php endif; ?>
 </body>
 

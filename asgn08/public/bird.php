@@ -8,20 +8,21 @@ declare(strict_types=1);
 require_once __DIR__ . '/../private/initialize.php';
 require_once __DIR__ . '/../private/classes/Bird.php';
 
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+// $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$id = (int) $_GET['id'] ?? null;
 
 $page_title = 'Bird Details';
 $error_message = null;
 $bird = null;
 
-if ($id === null || $id === false || $id < 1) {
+if ($id === null || $id === false) {
   http_response_code(400);
   $page_title = 'Invalid Bird ID';
   $error_message = 'Please provide a valid bird ID.';
 } else {
   try {
-    $database = Database::connect();
-    Bird::set_database($database);
+    // $database = Database::connect();
+    // Bird::set_database($database);
 
     $bird = Bird::find_by_id($id);
 
@@ -80,7 +81,7 @@ if ($id === null || $id === false || $id < 1) {
   <?php endif; ?>
 
   <p><a href="birds.php">Back to Bird Directory</a></p>
-  <p><a href="index.php">Back to Assignment Home</a></p>
+  <!-- <p><a href="index.php">Back to Assignment Home</a></p> -->
 </body>
 
 </html>
