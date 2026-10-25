@@ -34,7 +34,7 @@ try {
 <body>
   <h1>WNC Bird Directory</h1>
 
-  <p><a href="index.php">Back to Assignment Home</a></p>
+  <p><a href="index.php">Back to asgn08 home</a></p>
 
   <?php if ($error_message !== null): ?>
     <p><?= h($error_message) ?></p>x
