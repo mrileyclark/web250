@@ -29,6 +29,7 @@
         <li><a href="asgn07/salamanders-birds.php">Assignment 07</a></li>
         <li><a href="debugging_setup/index.php">Debugging Assignment</a></li>
         <li><a href="asgn08/public/index.php">Assignment 08</a></li>
+        <li><a href="asgn09/public/index.php">Assignment 09</a></li>
       </ul>
     </nav>
   </main>
