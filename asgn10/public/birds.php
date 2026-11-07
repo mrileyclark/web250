@@ -19,7 +19,6 @@ $birds = Bird::find_all();
 
   <p><a href="index.php">Back to index</a></p>
 
-  <!-- asgn09 TODO: Add the Create Bird link here, above the table. -->
   <p><a href="bird_new.php">Create Bird</a></p>
 
   <?php if ($birds === []): ?>
@@ -43,6 +42,7 @@ $birds = Bird::find_all();
             <td><?= h($bird->primary_habitat) ?></td>
             <td><?= h($bird->seasonal_status) ?></td>
             <td><a href="bird.php?id=<?= (int) $bird->id ?>">View details</a></td>
+            <td><a href="bird_edit.php?id=<?= (int) $bird->id ?>">Update</a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

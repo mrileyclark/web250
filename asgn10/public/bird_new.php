@@ -8,9 +8,6 @@ $bird = new Bird();
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // asgn09 TODO:
-  // Copy the submitted form values into the matching Bird properties.
-  // Use trim($_POST['field_name'] ?? '') for each value.
   $bird->common_name = trim($_POST['common_name'] ?? '');
   $bird->scientific_name = trim($_POST['scientific_name'] ?? '');
   $bird->family_name = trim($_POST['family_name'] ?? '');
@@ -18,16 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $bird->seasonal_status = trim($_POST['seasonal_status'] ?? '');
   $bird->description = trim($_POST['description'] ?? '');
 
-  // asgn09 TODO:
-  // Require at least common_name and scientific_name.
   if ($bird->common_name === '' || $bird->scientific_name === '') {
     $error_message = 'Common name and scientific name are required.';
   } else {
 
-    // asgn09 TODO:
-    // If the required values are present, call $bird->create().
-    // On success, redirect to birds.php and exit.
-    // Otherwise, set a short error message.
     if ($bird->create()) {
       header('Location: birds.php');
       exit;
