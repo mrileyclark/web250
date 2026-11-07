@@ -128,6 +128,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $bird !== null) {
       </p>
     </form>
   <?php endif; ?>
+
+  <p><a href="birds.php">Cancel</a></p>
 </body>
 
 </html>

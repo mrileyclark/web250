@@ -91,16 +91,6 @@ final class Bird
     return $bird;
   }
 
-  // asgn09 TODO:
-  // Add public function create(): bool here.
-  // Follow the assignment tutorial carefully:
-  // 1. Check self::$database.
-  // 2. Build INSERT INTO birds (...) VALUES (:placeholders...).
-  // 3. prepare($sql).
-  // 4. bindValue() each Bird property.
-  // 5. execute().
-  // 6. On success, assign lastInsertId() to $this->id.
-  // 7. Return the result.
   public function create(): bool
   {
     // create() will go here
@@ -157,5 +147,29 @@ final class Bird
     $statement->bindValue(':id', $this->id, PDO::PARAM_INT);
 
     return $statement->execute();
+  }
+
+  public function delete(): bool
+  {
+    if (self::$database === null) {
+      throw new RuntimeException('Call set_database() before delete().');
+    }
+
+    if ($this->id <= 0) {
+      return false;
+    }
+
+    $sql = 'DELETE FROM birds WHERE id = :id';
+
+    $statement = self::$database->prepare($sql);
+    $statement->bindValue(':id', $this->id, PDO::PARAM_INT);
+    $statement->execute();
+
+    if ($statement->rowCount() === 1) {
+      $this->id = 0;
+      return true;
+    }
+
+    return false;
   }
 }

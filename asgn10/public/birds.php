@@ -43,6 +43,7 @@ $birds = Bird::find_all();
             <td><?= h($bird->seasonal_status) ?></td>
             <td><a href="bird.php?id=<?= (int) $bird->id ?>">View details</a></td>
             <td><a href="bird_edit.php?id=<?= (int) $bird->id ?>">Update</a></td>
+            <td><a href="bird_delete.php?id=<?= (int) $bird->id ?>">Delete</a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
