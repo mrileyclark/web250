@@ -17,9 +17,24 @@ $birds = Bird::find_all();
 <body>
   <h1>Bird Directory</h1>
 
-  <p><a href="index.php">Back to index</a></p>
+  <!-- Navigation -->
+  <p>
+    <a href="index.php">Home</a> |
+    <a href="birds.php">Birds</a>
 
-  <p><a href="bird_new.php">Create Bird</a></p>
+    <?php if (is_logged_in()): ?>
+      | Logged in as <?= h($_SESSION['username'] ?? 'Member') ?>
+      | <a href="logout.php">Logout</a>
+    <?php else: ?>
+      | <a href="register.php">Register</a>
+      | <a href="login.php">Login</a>
+    <?php endif; ?>
+  </p>
+
+  <!-- Only members can create birds. -->
+  <?php if (is_logged_in()): ?>
+    <p><a href="bird_new.php">Create Bird</a></p>
+  <?php endif; ?>
 
   <?php if ($birds === []): ?>
     <p>No birds were found.</p>
@@ -32,8 +47,13 @@ $birds = Bird::find_all();
           <th scope="col">Primary Habitat</th>
           <th scope="col">Seasonal Status</th>
           <th scope="col">Details</th>
+
+          <?php if (is_logged_in()): ?>
+            <th scope="col">Actions</th>
+          <?php endif; ?>
         </tr>
       </thead>
+
       <tbody>
         <?php foreach ($birds as $bird): ?>
           <tr>
@@ -41,14 +61,25 @@ $birds = Bird::find_all();
             <td><em><?= h($bird->scientific_name) ?></em></td>
             <td><?= h($bird->primary_habitat) ?></td>
             <td><?= h($bird->seasonal_status) ?></td>
-            <td><a href="bird.php?id=<?= (int) $bird->id ?>">View details</a></td>
-            <td><a href="bird_edit.php?id=<?= (int) $bird->id ?>">Update</a></td>
-            <td><a href="bird_delete.php?id=<?= (int) $bird->id ?>">Delete</a></td>
+
+            <td>
+              <a href="bird.php?id=<?= (int) $bird->id ?>">
+                View details
+              </a>
+            </td>
+
+            <?php if (is_logged_in()): ?>
+              <td>
+                <a href="bird_edit.php?id=<?= (int) $bird->id ?>">Update</a>
+                <a href="bird_delete.php?id=<?= (int) $bird->id ?>">Delete</a>
+              </td>
+            <?php endif; ?>
           </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
   <?php endif; ?>
+
 </body>
 
 </html>

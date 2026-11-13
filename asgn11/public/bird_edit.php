@@ -2,6 +2,8 @@
 
 require_once dirname(__DIR__) . '/private/initialize.php';
 
+require_login();
+
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -1,12 +1,15 @@
 <?php
 
-declare(strict_types=1);
+// Start the session if one has not already been started.
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 
-// Load Composer and its packages.
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+$root = dirname(__DIR__);
 
-// Load the database settings from the .env file.
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+require_once $root . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable($root);
 $dotenv->load();
 
 // Load the application files.
