@@ -1,7 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
-final class Member
+class Member
 {
   private static ?PDO $database = null;
 

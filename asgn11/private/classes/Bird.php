@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-final class Bird
+class Bird
 {
   private static ?PDO $database = null;
 

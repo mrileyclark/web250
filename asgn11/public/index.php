@@ -19,6 +19,10 @@ $message = display_session_message();
 <body>
   <h1>WNC Birds</h1>
 
+  <?php if (is_logged_in()): ?>
+    <p>You are now logged in.</p>
+  <?php endif; ?>
+
   <?php if ($message !== ''): ?>
     <p><?= h($message) ?></p>
   <?php endif; ?>

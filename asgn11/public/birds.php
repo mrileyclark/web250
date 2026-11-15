@@ -19,16 +19,9 @@ $birds = Bird::find_all();
 
   <!-- Navigation -->
   <p>
-    <a href="index.php">Home</a> |
-    <a href="birds.php">Birds</a>
-
-    <?php if (is_logged_in()): ?>
-      | Logged in as <?= h($_SESSION['username'] ?? 'Member') ?>
-      | <a href="logout.php">Logout</a>
-    <?php else: ?>
-      | <a href="register.php">Register</a>
-      | <a href="login.php">Login</a>
-    <?php endif; ?>
+    <a href="index.php">Home</a>
+    | <a href="signup.php">Sign Up</a>
+    | <a href="login.php">Login</a>
   </p>
 
   <!-- Only members can create birds. -->
@@ -70,7 +63,7 @@ $birds = Bird::find_all();
 
             <?php if (is_logged_in()): ?>
               <td>
-                <a href="bird_edit.php?id=<?= (int) $bird->id ?>">Update</a>
+                <a href="bird_edit.php?id=<?= (int) $bird->id ?>">Update</a> |
                 <a href="bird_delete.php?id=<?= (int) $bird->id ?>">Delete</a>
               </td>
             <?php endif; ?>

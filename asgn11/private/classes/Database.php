@@ -1,6 +1,8 @@
 <?php
 
-final class Database
+declare(strict_types=1);
+
+class Database
 {
   private static ?PDO $connection = null;
 
