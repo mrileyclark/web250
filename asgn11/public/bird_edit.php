@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 require_once dirname(__DIR__) . '/private/initialize.php';
 
 require_login();
 
 $error_message = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (is_post()) {
   $id = filter_input(
     INPUT_POST,
     'id',
@@ -34,7 +36,7 @@ if ($id === false || $id === null) {
   }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $bird !== null) {
+if (is_post() && $bird !== null) {
   $bird->common_name = trim($_POST['common_name'] ?? '');
   $bird->scientific_name = trim($_POST['scientific_name'] ?? '');
   $bird->family_name = trim($_POST['family_name'] ?? '');
@@ -45,8 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $bird !== null) {
   if ($bird->common_name === '' || $bird->scientific_name === '') {
     $error_message = 'Common name and scientific name are required.';
   } elseif ($bird->update()) {
-    header('Location: birds.php');
-    exit;
+    redirect_to('birds.php');
   } else {
     $error_message = 'The Bird could not be updated.';
   }
