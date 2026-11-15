@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 require_once dirname(__DIR__) . '/private/initialize.php';
 
 $errors = [];
 $success = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (is_post()) {
 
   // Get the submitted username and password.
   $username = trim($_POST['username'] ?? '');
@@ -25,13 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $member &&
       password_verify($password, $member->password_hash)
     ) {
-      // Regenerate the session ID after login.
-      session_regenerate_id(true);
-
-      // Store member information in the session.
-      $_SESSION['member_id'] = $member->id;
-      $_SESSION['username'] = $member->username;
-      $_SESSION['role'] = $member->role;
+      // Log in the member and store session information.
+      log_in_member($member);
 
       $success = 'Login successful!';
     } else {
@@ -55,17 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <h1>Login</h1>
 
-  <?php
-  if (!empty($errors)) {
-    foreach ($errors as $error) {
-      echo '<p>' . htmlspecialchars($error) . '</p>';
-    }
-  }
+  <?php foreach ($errors as $error): ?>
+    <p><?= h($error) ?></p>
+  <?php endforeach; ?>
 
-  if ($success !== '') {
-    echo '<p>' . htmlspecialchars($success) . '</p>';
-  }
-  ?>
+  <?php if ($success !== ''): ?>
+    <p><?= h($success) ?></p>
+  <?php endif; ?>
 
   <form action="login.php" method="post">
 
@@ -82,6 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Login</button>
 
   </form>
+
+  <p><a href="signup.php">Create an account</a></p>
+
+  <p><a href="index.php">Home</a></p>
 
 </body>
 
