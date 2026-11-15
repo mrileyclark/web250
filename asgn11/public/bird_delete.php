@@ -1,11 +1,11 @@
 <?php
-require_once __DIR__ . '/../private/initialize.php';
+require_once dirname(__DIR__) . '/private/initialize.php';
 
 require_login();
 
 $error_message = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (is_post()) {
   $id = filter_input(
     INPUT_POST,
     'id',
@@ -34,10 +34,9 @@ if ($id === false || $id === null) {
   }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $bird !== null) {
+if (is_post() && $bird !== null) {
   if ($bird->delete()) {
-    header('Location: birds.php');
-    exit;
+    redirect_to('birds.php');
   }
 
   $error_message = 'The Bird could not be deleted.';
