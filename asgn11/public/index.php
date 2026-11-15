@@ -2,60 +2,37 @@
 
 declare(strict_types=1);
 
-$bird_count = 0;
-$image_count = 0;
-$link_count = 0;
-$error_message = '';
+require_once dirname(__DIR__) . '/private/initialize.php';
 
-try {
-  require_once dirname(__DIR__) . '/private/initialize.php';
+$bird_count = Bird::count_all();
+$message = display_session_message();
 
-  $bird_count = Bird::count_all();
-  $image_count = (int) $pdo->query('SELECT COUNT(*) FROM bird_images')->fetchColumn();
-  $link_count = (int) $pdo->query('SELECT COUNT(*) FROM bird_image_links')->fetchColumn();
-} catch (Throwable $error) {
-  $error_message = 'The database summary is not available right now.';
-}
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>WEB 250 asgn10 - WNC Birds</title>
+  <title>WNC Birds</title>
 </head>
 
 <body>
-  <h1>WEB 250 asgn10 - WNC Birds</h1>
+  <h1>WNC Birds</h1>
 
-  <p><a href="birds.php">Bird Directory</a></p>
+  <?php if ($message !== ''): ?>
+    <p><?= h($message) ?></p>
+  <?php endif; ?>
 
-  <?php if ($error_message !== ''): ?>
-    <p><?= h($error_message) ?></p>
+  <p>Bird records: <?= h($bird_count) ?></p>
+  <p><a href="birds.php">View Birds</a></p>
+
+  <?php if (is_logged_in()): ?>
+    <p>Logged in as <?= h(current_username()) ?></p>
+    <p><a href="bird_new.php">Create a Bird</a></p>
+    <p><a href="logout.php">Log Out</a></p>
   <?php else: ?>
-    <table>
-      <caption>Database Summary</caption>
-      <thead>
-        <tr>
-          <th scope="col">Table</th>
-          <th scope="col">Rows</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>birds</td>
-          <td><?= $bird_count ?></td>
-        </tr>
-        <tr>
-          <td>bird_images</td>
-          <td><?= $image_count ?></td>
-        </tr>
-        <tr>
-          <td>bird_image_links</td>
-          <td><?= $link_count ?></td>
-        </tr>
-      </tbody>
-    </table>
+    <p><a href="signup.php">Sign Up</a></p>
+    <p><a href="login.php">Log In</a></p>
   <?php endif; ?>
 </body>
 
