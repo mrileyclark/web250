@@ -9,7 +9,7 @@ require_login();
 $bird = new Bird();
 $error_message = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (is_post()) {
   $bird->common_name = trim($_POST['common_name'] ?? '');
   $bird->scientific_name = trim($_POST['scientific_name'] ?? '');
   $bird->family_name = trim($_POST['family_name'] ?? '');
@@ -22,8 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else {
 
     if ($bird->create()) {
-      header('Location: birds.php');
-      exit;
+      redirect_to('birds.php');
     } else {
       $error_message = 'The bird could not be created.';
     }
