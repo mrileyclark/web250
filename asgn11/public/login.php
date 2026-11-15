@@ -30,7 +30,8 @@ if (is_post()) {
       // Log in the member and store session information.
       log_in_member($member);
 
-      $success = 'Login successful!';
+      // Redirect to the home page after login.
+      redirect_to('index.php');
     } else {
       $errors[] = 'Invalid username or password.';
     }
