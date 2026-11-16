@@ -1,4 +1,3 @@
-
 <?php
 
 declare(strict_types=1);
@@ -10,5 +9,3 @@ log_out_member();
 
 // Return the user to the public home page.
 redirect_to('index.php');
-
-?>
